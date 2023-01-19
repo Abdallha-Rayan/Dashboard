@@ -1,0 +1,24 @@
+<!-- <div>
+  <app-dropdown [items]="items" [label]="'Please Choose Major'" (itemChange)="onItemChange($event , 'Selection1')"></app-dropdown>
+</div>
+<div *ngIf="selectedItem" class="desc">
+  Your Select Is : {{selectedItem.name}} ;
+</div>
+<div>
+  <app-dropdown [items]="items2" [label]="'Please Choose Skill'" (itemChange)="onItemChange($event , 'Selection2')"></app-dropdown>
+</div>
+
+<app-multipale-dropdown [dropdownSettings]="dropdownSettings" [dropdownList]="dropdownList"></app-multipale-dropdown> -->
+
+<div class="wrapper">
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="assets/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
+</div>

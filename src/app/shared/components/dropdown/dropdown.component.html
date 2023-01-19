@@ -1,0 +1,4 @@
+<select class="drop-down" (change)="onValueChange($event)">
+  <option selected disabled>Please Choose Your Option</option>
+  <option *ngFor="let item of items" value="{{item.id}}">{{item.name}}</option>
+</select>

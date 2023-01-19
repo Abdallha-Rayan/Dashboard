@@ -1,0 +1,63 @@
+<app-education-add *ngIf="showAddEducationForms"></app-education-add>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Educations</h3>
+        <div class="card-tools">
+          <div class="input-group input-group-sm" style="width: 350px;">
+            <button class="btn" (click)="toggleAddForm()">
+              <i class="fas fa-plus"></i>
+            </button>
+            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-default">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Majors</th>
+              <th>Country</th>
+              <th>City</th>
+              <th>University</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Still Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of educations ; let i = index">
+              <td>{{item.id}}</td>
+              <td>{{item.majors}}</td>
+              <td>{{item.address.country}}</td>
+              <td>{{item.address.city}}</td>
+              <td>{{item.universty}}</td>
+              <td>{{item.date.startDate}}</td>
+              <td>{{item.date.endDate}}</td>
+              <td>{{item.presentStatus}}</td>
+              <td>
+                <button class="btn btn-xs" (click)="edite(item)">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-xs" (click)="removeEducation(i)">
+                  <i class="fas fa-trash"></i>
+                </button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
